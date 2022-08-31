@@ -2,6 +2,8 @@
 
 source_path=/mnt/ANIME
 dest_path=/mnt/BACKUP/AnimeBackup/
+# script dir
+cwd=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # source_path=/home/kretes/k8d.server.smart_backup/test
 # dest_path=/home/kretes/k8d.server.smart_backup/backup/
 
@@ -23,7 +25,7 @@ fake_copy_extensions=( '*.mkv' '*.mp4' '*.mka')
 for ext in "${fake_copy_extensions[@]}"
 do
     :
-   find $source_path -type f -iname $ext -exec ./copyMetadata.sh $dest_path {}  \;
+   find $source_path -type f -iname $ext -exec "$cwd"/copyMetadata.sh $dest_path {}  \;
 done
 
 mv "$dest_path"mnt/ANIME/* "$dest_path"
