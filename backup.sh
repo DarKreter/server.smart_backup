@@ -27,3 +27,5 @@ do
 done
 
 mv "$dest_path"mnt/ANIME/* "$dest_path"
+rm -d "$dest_path"mnt/ANIME
+rm -d "$dest_path"mnt
