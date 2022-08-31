@@ -3,7 +3,7 @@
 dest_path=$1
 full_file_path=$2
 
-# echo $full_file_path
+echo $full_file_path
 
 # Get file directory and file name
 DIR="$(dirname "${full_file_path}")" ; FILE="$(basename "${full_file_path}")"
