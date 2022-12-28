@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Lower priority of script
+renice -n 10 $$
+
 source_path=/mnt/ANIME
 dest_path=/mnt/BACKUP/AnimeBackup/
 # script dir
@@ -31,3 +34,5 @@ done
 mv "$dest_path"mnt/ANIME/* "$dest_path"
 rm -d "$dest_path"mnt/ANIME
 rm -d "$dest_path"mnt
+
+echo "DONE!"
